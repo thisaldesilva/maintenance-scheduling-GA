@@ -36,6 +36,8 @@ Suppose, there are seven power units to be maintained in four equal intervals. T
 
 <img src="images/table7.2.png" width=100>
 
+![](https://octodex.github.com/images/yaktocat.png)
+
 The constraints for this problem can be speciﬁed as follows:
 
 * Maintenance of any unit starts at the beginning of an interval and ﬁnishes at the end of the same or adjacent interval. The maintenance cannot be aborted or ﬁnished earlier than scheduled.
