@@ -54,7 +54,7 @@ However, crossover and mutation operators could easily create binary strings tha
 
 A better approach is to change the chromosome syntax. As already discussed, a chromosome is a collection of elementary parts called genes. Traditionally, each gene is represented by only one bit and cannot be broken into smaller elements. For our problem, we can adopt the same concept, but represent a gene by four bits. In other words, the smallest indivisible part of our chromosome is a 4-bit string. This representation allows crossover and mutation operators to act according to the theoretical grounding of genetic algorithms. What remains to be done is to produce a pool of genes for each unit:
 
-![](/images/units.png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/units.PNG)
 
 The GA can now create an initial population of chromosomes by ﬁlling 7-gene chromosomes with genes randomly selected from the corresponding pools. A sample of such a chromosome is shown in Figure 7.9.
 
@@ -62,10 +62,9 @@ The GA can now create an initial population of chromosomes by ﬁlling 7-gene ch
 
 The chromosome evaluation is a crucial part of the GA, because chromosomes are selected for mating based on their ﬁtness. The ﬁtness function must capture what makes a maintenance schedule either good or bad for the user. For our problem we apply a fairly simple function concerned with constraint violations and the net reserve at each interval.
 
-![](/images/chromosome.png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/chromosome.PNG)
 
 The evaluation of a chromosome starts with the sum of capacities of the units scheduled for maintenance at each interval. For the chromosome shown in Figure 7.9, we obtain: 
-
 
 _Interval 1_: 0 *	20 + 0 * 15 + 0 * 35 + 1 * 40 + 0 * 15 + 0 * 15 + 1 * 10 = 50 
 
@@ -101,7 +100,7 @@ Since all the results are positive, this particular chromosome does not violate 
 
 Constructing genetic operators is challenging and we must experiment to make crossover andmutation work correctly. The chromosome has to be broken up in a way that is legal for our problem. Since we have already changed the chromosome syntax for this, we can use the GA operators in their classical forms. Each gene in a chromosome is represented by a 4-bit indivisible string, which consists of a possible maintenance schedule for a particular unit. Thus, any random mutation
 
-![](/images/figure7.10.png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/figure7.10.PNG)
 
 of a gene or recombination of several genes from two parent chromosomes may result only in changes of the maintenance schedules for individual units, but cannot create ‘unnatural’ chromosomes. Figure 7.10(a) shows an example of the crossover application during a run of the GA. The children are made by cutting the parents at the randomly selected point denoted by the vertical line and exchanging parental genes after the cut. Figure 7.10(b) demonstrates an example of mutation. The mutation operator randomly selects a 4-bit gene in a chromosome and replaces it by a gene randomly selected from the corresponding pool. In the example shown in Figure 7.10(b), the chromosome is mutated in its third gene, which is replaced by the gene 0001 chosen from the pool of genes for the Unit 3.
 
@@ -109,14 +108,13 @@ of a gene or recombination of several genes from two parent chromosomes may resu
 
 It is time to run the GA. First, we must choose the population size and the number of generations to be run. Common sense suggests that a larger population can achieve better solutions than a smaller one, but will work more slowly. In fact, however, the most effective population size depends on the problem being solved, particularly on the problem coding scheme (Goldberg, 1989). The GA can run only a ﬁnite number of generations to obtain a solution. Perhaps we could choose a very large population and run it only once, or we could choose a smaller population and run it several times. In any case, only experimentation can give us the answer.
 
-![](/images/figure7.11(1).png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/figure7.11(1).PNG)
 
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/figure7.11(2).PNG)
 
-![](/images/figure7.11(2).png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/figure7.12(1).PNG)
 
-![](/images/figure7.12(1).png)
-
-![](/images/figure7.12(2).png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/figure7.12(2).PNG)
 
 Figure 7.11(a) presents performance graphs and the best schedule created by 50 generations of 20 chromosomes. As you can see, the minimum of the net reserves for the best schedule is 15MW. Let us increase the number of generations to 100 and compare the best schedules. Figure 7.11(b) presents the results. The best schedule now provides the minimum net reserve of 20MW. However, in both cases, the best individuals appeared in the initial generation, and the increasing number of generations did not affect the ﬁnal solution. It indicates that we should try increasing the population size. 
 
