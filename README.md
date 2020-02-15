@@ -44,7 +44,7 @@ The constraints for this problem can be speciﬁed as follows:
 
 The optimum criterion here is that the net reserve must be at the maximum during any maintenance period.
 
-#### Represent the problem domain as a chromosome
+#### Step 2: Represent the problem domain as a chromosome
 
 Our scheduling problem is essentially an ordering problem, requiring us to list the tasks in a particular order. A complete schedule may consist of a number of overlapping tasks, but not all orderings are legal, since they may violate the constraints. Our job is to represent a complete schedule as a chromosome of a ﬁxed length. 
 
@@ -58,7 +58,7 @@ A better approach is to change the chromosome syntax. As already discussed, a ch
 
 The GA can now create an initial population of chromosomes by ﬁlling 7-gene chromosomes with genes randomly selected from the corresponding pools. A sample of such a chromosome is shown in Figure 7.9.
 
-#### Deﬁne a ﬁtness function to evaluate the chromosome performance
+#### Step 3: Deﬁne a ﬁtness function to evaluate the chromosome performance
 
 The chromosome evaluation is a crucial part of the GA, because chromosomes are selected for mating based on their ﬁtness. The ﬁtness function must capture what makes a maintenance schedule either good or bad for the user. For our problem we apply a fairly simple function concerned with constraint violations and the net reserve at each interval.
 
