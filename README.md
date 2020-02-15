@@ -34,9 +34,7 @@ For instance, if we assume that the total installed capacity is 150MW and a unit
 
 Suppose, there are seven power units to be maintained in four equal intervals. The maximum loads expected during these intervals are 80, 90, 65 and 70MW. The unit capacities and their maintenance requirements are presented in Table 7.2.
 
-<img src="images/table7.2.png" width=100>
-
-![](https://octodex.github.com/images/yaktocat.png)
+![](https://github.com/thisaldesilva/maintenance-scheduling-GA/blob/master/images/table7.2.PNG)
 
 The constraints for this problem can be speciﬁed as follows:
 
